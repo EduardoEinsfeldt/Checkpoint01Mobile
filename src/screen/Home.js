@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, Image, StyleSheet, View } from 'react-native';
+import { Button, Image, StyleSheet, View, TextInput } from 'react-native';
 
 export default function Home() {
   const [nomeProduto, setNomeProduto] = useState('')
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Image source={require('../../assets/tzimisce.png')} style={styles.imagem} />
-      <TexInput
+      <TextInput
         placeholder='Digite o nome do Produto'
         placeholderTextColor='#880808A4'
         style={styles.input}
@@ -19,7 +19,7 @@ export default function Home() {
         onChangeText={(valor) => setNomeProduto(valor)}
         keyboardType='default'
       />
-      <TexInput
+      <TextInput
         placeholder='Digite o valor do Produto'
         placeholderTextColor='#880808A4'
         style={styles.input}
@@ -27,7 +27,7 @@ export default function Home() {
         onChangeText={(valor) => setValorProduto(valor)}
         keyboardType='numeric'
       />
-      <TexInput
+      <TextInput
         placeholder='Digite o valor do Produto'
         placeholderTextColor='#880808A4'
         style={styles.input}
