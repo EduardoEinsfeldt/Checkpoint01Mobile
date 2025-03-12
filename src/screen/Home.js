@@ -6,6 +6,7 @@ export default function Home() {
   const [nomeProduto, setNomeProduto] = useState('')
   const [valorProduto, setValorProduto] = useState('')
   const [porcentagemProduto, setPorcentagemProduto] = useState('')
+  const Resultado = valorProduto * porcentagemProduto
 
   return (
     <View style={styles.container}>
@@ -15,6 +16,7 @@ export default function Home() {
         placeholderTextColor='#880808A4'
         style={styles.input}
         value={nomeProduto}
+        onChangeText={(valor) => setNomeProduto(valor)}
         keyboardType='default'
       />
       <TexInput
@@ -22,19 +24,21 @@ export default function Home() {
         placeholderTextColor='#880808A4'
         style={styles.input}
         value={valorProduto}
-        keyboardType='default'
+        onChangeText={(valor) => setValorProduto(valor)}
+        keyboardType='numeric'
       />
       <TexInput
         placeholder='Digite o valor do Produto'
         placeholderTextColor='#880808A4'
         style={styles.input}
         value={porcentagemProduto}
-        keyboardType='default'
+        onChangeText={(valor) => setPorcentagemProduto(valor)}
+        keyboardType='numeric'
       />
       <Button
         title="Calcular"
         style={styles.button}
-
+        onPress={(Resultado)}
         color='black'
       />
       <StatusBar style="auto" />
