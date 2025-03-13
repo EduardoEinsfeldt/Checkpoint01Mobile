@@ -1,12 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, Image, StyleSheet, View, TextInput } from 'react-native';
+import calcularNovoValor from '../components/calculo';
 
 export default function Home() {
   const [nomeProduto, setNomeProduto] = useState('')
   const [valorProduto, setValorProduto] = useState('')
   const [porcentagemProduto, setPorcentagemProduto] = useState('')
-  const Resultado = valorProduto * porcentagemProduto
+  const navigation = useNavigation();
+
+  const handleCalculo = () => {
+    const resultado = calcularNovoValor(nomeProduto, valorProduto, porcentagemProduto);
+    if (resultado) {
+      navigation.navigate('tabResultado', resultado);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -38,7 +46,7 @@ export default function Home() {
       <Button
         title="Calcular"
         style={styles.button}
-        onPress={(Resultado)}
+        onPress={handleCalculo}
         color='black'
       />
       <StatusBar style="auto" />
