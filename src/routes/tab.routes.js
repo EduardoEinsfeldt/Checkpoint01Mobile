@@ -14,13 +14,13 @@ export default function TabRoutes({ route }) {
             <Tab.Screen name='tabHome' component={Home}
                 options={{
                     tabBarIcon: () => <Feather name='home' size={20} />,
-                    tabBarLabel: "Início", tabBarActiveBackgroundColor: 'gold'
+                    tabBarLabel: "Início", tabBarActiveBackgroundColor: '#695505', tabBarInactiveBackgroundColor: '#880808', tabBarActiveTintColor: 'black', tabBarInactiveTintColor: 'black',
                 }}
             />
             <Tab.Screen name='tabResultado' component={Resultado}
                 options={{
-                    tabBarIcon: () => <Feather name='checkcircle' size={20} />,
-                    tabBarLabel: "Resultado", tabBarActiveBackgroundColor: 'gold'
+                    tabBarIcon: () => <Feather name='check-circle' size={20} />,
+                    tabBarLabel: "Resultado", tabBarActiveBackgroundColor: '#695505', tabBarInactiveBackgroundColor: '#880808', tabBarActiveTintColor: 'black', tabBarInactiveTintColor: 'black'
                 }}
             />
         </Tab.Navigator>

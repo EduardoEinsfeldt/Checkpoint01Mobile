@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, Image, StyleSheet, View, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import calcularNovoValor from '../components/calculo';
 
 export default function Home() {
@@ -36,7 +37,7 @@ export default function Home() {
         keyboardType='numeric'
       />
       <TextInput
-        placeholder='Digite o valor do Produto'
+        placeholder='Digite o valor da Porcentagem'
         placeholderTextColor='#880808A4'
         style={styles.input}
         value={porcentagemProduto}
